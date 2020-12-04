@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,7 +16,27 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path:'/o2o',
+    name:'o2o',
+    component: () => import('../views/oTwoo.vue')
+  },
+  {
+    path:'/sceneMarketing',
+    name:'场景营销',
+    component: () => import('../views/sceneMarketing.vue')
+  },
+  {
+    path:'/theWholeChain',
+    name:'全链条',
+    component: () => import('../views/theWholeChain.vue')
+  },
+  {
+    path:'/privateTraffic',
+    name:'私域流量',
+    component: () => import('../views/privateTraffic.vue')
+  },
 ]
 
 const router = new VueRouter({
