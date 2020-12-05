@@ -42,6 +42,11 @@ const routes = [
     name:'文章详情',
     component: () => import('../views/articleDetails.vue')
   },
+  {
+    path:'/contactUs',
+    name:'联系我们',
+    component: () => import('../views/contactUs.vue')
+  },
 ]
 
 const router = new VueRouter({

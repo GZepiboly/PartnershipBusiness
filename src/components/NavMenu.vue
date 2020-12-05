@@ -5,6 +5,7 @@
       :key="idx"
       class="tab"
       :class="dataList.now == idx ? 'now':''"
+      @click="alterNow(idx)"
     >
       {{item}}
     </div>
@@ -12,7 +13,12 @@
 </template>
 <script>
 export default {
-  props: ['dataList']
+  props: ['dataList'],
+  methods:{
+    alterNow(e){
+      this.$set(this.dataList,'now',e)
+    }
+  }
 }
 </script>
 <style lang="scss">
