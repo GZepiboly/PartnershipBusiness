@@ -2,9 +2,9 @@
   <div class="oTwoo vive">
     <Slideshow
       :img="advertising"
-      :center="center"
+      :content="content"
     >
-      <!-- <template slot="center">
+      <!-- <template slot="content">
         <div class="slot">
           
         </div>
@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       advertising,
-      center: {
+      content: {
         type: 1,
         one: '针对性解决营销难题',
         two: '精准匹配不同场景的<br />解决方案',

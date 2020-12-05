@@ -7,7 +7,7 @@
       <div
         v-for="(item,idx) in significance.imageTextList"
         :key="idx"
-        class="center"
+        class="content"
       >
         <img
           :src="item.img"
@@ -46,7 +46,7 @@ export default {
     margin: 35px auto 0;
     display: flex;
     justify-content: center;
-    .center {
+    .content {
       width: 24vw;
       img {
         width: 340px;

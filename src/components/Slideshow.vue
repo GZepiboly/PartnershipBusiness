@@ -4,16 +4,16 @@
       :src="img"
       alt=""
     />
-    <div class="center">
-      <slot name="center"></slot>
+    <div class="content">
+      <slot name="content"></slot>
       <div class="text">
-        <template v-if="center.type == 1">
-          <div class="one">{{center.one}}</div>
+        <template v-if="content">
+          <div class="one">{{content.one}}</div>
           <div
             class="two"
-            v-html="center.two"
+            v-html="content.two"
           ></div>
-          <div class="three">{{center.three}}</div>
+          <div class="three">{{content.three}}</div>
         </template>
       </div>
     </div>
@@ -21,7 +21,7 @@
 </template>
 <script>
 export default {
-  props: ['img', 'center']
+  props: ['img', 'content']
 }
 </script>
 <style lang="scss">
@@ -32,7 +32,7 @@ export default {
     height: 100%;
     width: 100%;
   }
-  .center {
+  .content {
     width: 100%;
     height: 100%;
     box-sizing: border-box;

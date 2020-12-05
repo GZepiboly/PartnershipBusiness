@@ -37,6 +37,11 @@ const routes = [
     name:'私域流量',
     component: () => import('../views/privateTraffic.vue')
   },
+  {
+    path:'/articleDetails',
+    name:'文章详情',
+    component: () => import('../views/articleDetails.vue')
+  },
 ]
 
 const router = new VueRouter({
