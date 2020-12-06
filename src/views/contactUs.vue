@@ -34,6 +34,8 @@
             <img
               :src="item.isbol?item.img1:item.img2"
               alt=""
+              @mouseenter="alterImg(item)"
+              @mouseleave="alterImg(item)"
             >
             <div class="text">
               <div class="title">{{item.title}}</div>
@@ -44,6 +46,43 @@
               >
                 {{it}}</div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="my-contact-way">
+      <div class="handshakeImg">
+        <div class="title">
+          <div class="one">填好信息我们会尽快联系您</div>
+          <div class="two">从这里开始 连接企业一切可能</div>
+        </div>
+        <div class="form">
+          <input
+            type="text"
+            placeholder="请输入您的姓名"
+          >
+          <input
+            type="text"
+            placeholder="请输入您的手机号码"
+          >
+          <input
+            type="text"
+            placeholder="请输入您的公司名"
+          >
+          <button>提交信息</button>
+        </div>
+        <div class="list">
+          <div
+            class="item"
+            v-for="(item,idx) in listItem"
+            :key="idx"
+          >
+            <img
+              :src="item.img"
+              alt=""
+            >
+            <div>{{item.title}}</div>
+            <div>{{item.content}}</div>
           </div>
         </div>
       </div>
@@ -87,61 +126,93 @@ export default {
           img1: img1,
           title: '需求沟通',
           content: ['倾听思考，收集内容资料', '（商务人员、产品经理）'],
-          isbol:true,
-          img2:img2
+          isbol: true,
+          img2: img2
         },
         {
           img1: img3,
           title: '项目分析',
           content: ['理解消化，做出项目评估', '（商务人员、产品经理）'],
-          isbol:true,
-          img2:img4
+          isbol: true,
+          img2: img4
         },
         {
           img1: img5,
           title: '交互设计',
           content: ['交互分析、行为设计，确保最优用户体验', '（交互设计师、界面设计师）'],
-          isbol:true,
-          img2:img6
+          isbol: true,
+          img2: img6
         },
         {
           img1: img7,
           title: '视觉创意',
           content: ['界面设计、色彩及平面元', '素设计，结构及布局规范确认', '（界面设计师）'],
-          isbol:true,
-          img2:img8
+          isbol: true,
+          img2: img8
         },
         {
           img1: img9,
           title: '前端制作',
           content: ["HTML/5、CSS3、JS实现", '网页重构，设计效果图网页化', '（前端开发工程师）'],
-          isbol:true,
-          img2:img10
+          isbol: true,
+          img2: img10
         },
         {
           img1: img11,
           title: '功能开发',
           content: ['原生态程序编写、代', '码优化、实现项目功能', '（后台开发程序员）'],
-          isbol:true,
-          img2:img12
+          isbol: true,
+          img2: img12
         },
         {
           img1: img13,
           title: '整体测试',
           content: ['界面与程序整合，整体性', '能测试，修改调整，完善细节', '（网编人员）'],
-          isbol:true,
-          img2:img14
+          isbol: true,
+          img2: img14
         },
         {
           img1: img15,
           title: '内容初始化',
           content: ['上传、发布、完善内容', '信息，部署上线', '（网编人员）'],
-          isbol:true,
-          img2:img16
+          isbol: true,
+          img2: img16
+        },
+      ],
+      listItem: [
+        {
+          img: '',
+          title: '专注',
+          content: '8年商城系统研发'
+        },
+        {
+          img: '',
+          title: '团队',
+          content: '骨灰级技术团队'
+        },
+        {
+          img: '',
+          title: '售后',
+          content: '专属售后服务'
+        },
+        {
+          img: '',
+          title: '合同',
+          content: '企业合同防纠纷'
+        },
+        {
+          img: '',
+          title: '发票',
+          content: '开具正规公司发票'
         },
       ]
     }
   },
+  methods: {
+    alterImg(item) {
+      item.isbol = !item.isbol
+    }
+  }
 }
 </script>
 <style lang="scss">
@@ -275,7 +346,7 @@ export default {
       .wire {
         background: url('../assets/contactUs/wire.png') no-repeat;
         background-size: 100% 100%;
-        height: 88px;
+        height: 100px;
         width: 1370px;
       }
       .flowDirection {
@@ -320,7 +391,7 @@ export default {
               margin-bottom: 90px;
               // margin-top: 110px;
             }
-            .text{
+            .text {
               bottom: -84px;
             }
           }
@@ -330,9 +401,114 @@ export default {
               margin-top: 90px;
               // margin-bottom: 110px;
             }
-             .text{
+            .text {
               top: -84px;
             }
+          }
+        }
+      }
+    }
+  }
+  .my-contact-way {
+    width: 100%;
+    height: 982px;
+    padding: 66px 0 35px;
+    background-color: #eee;
+    .handshakeImg {
+      width: 100%;
+      height: 100%;
+      background: url('../assets/contactUs/advertising.png') no-repeat;
+      background-size: 100% 100%;
+      padding: 42px 320px 66px 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .title {
+        margin-bottom: 44px;
+        .one {
+          font-family: MicrosoftYaHei;
+          font-size: 30px;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+        .two {
+          font-family: MicrosoftYaHei;
+          font-size: 24px;
+          font-weight: normal;
+          font-stretch: normal;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 70px;
+        > input {
+          width: 629px;
+          height: 80px;
+          background-color: #d2d2d2;
+          border-radius: 40px;
+          border: solid 1px #ffffff;
+          margin-bottom: 26px;
+          font-family: MicrosoftYaHei;
+          font-size: 30px;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 80px;
+          letter-spacing: 0px;
+          color: #959595;
+          text-align: center;
+        }
+        > button {
+          width: 629px;
+          height: 80px;
+          background-color: #a40000;
+          border-radius: 40px;
+          font-family: MicrosoftYaHei;
+          font-size: 30px;
+          font-weight: normal;
+          font-stretch: normal;
+          line-height: 80px;
+          letter-spacing: 0px;
+          color: #ffffff;
+        }
+      }
+      .list {
+        width: 1601px;
+        height: 242px;
+        background: #ffffff;
+        border-right: 30px solid #a40000;
+        padding: 62px 104px 62px 400px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        .item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          img {
+            width: 58px;
+            height: 70px;
+          }
+          > .title {
+            font-family: MicrosoftYaHei;
+            font-size: 30px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #434343;
+          }
+          .content {
+            font-family: MicrosoftYaHeiLight;
+            font-size: 24px;
+            font-weight: normal;
+            font-stretch: normal;
+            letter-spacing: 0px;
+            color: #434343;
           }
         }
       }
