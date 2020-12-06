@@ -34,8 +34,8 @@
             <img
               :src="item.isbol?item.img1:item.img2"
               alt=""
-              @mouseenter="alterImg(item)"
-              @mouseleave="alterImg(item)"
+              @mouseenter="alterImg(item,idx)"
+              @mouseleave="alterImg(item,idx)"
             >
             <div class="text">
               <div class="title">{{item.title}}</div>
@@ -72,7 +72,7 @@
           <button>提交信息</button>
         </div>
         <div class="list">
-          <div
+          <!-- <div
             class="item"
             v-for="(item,idx) in listItem"
             :key="idx"
@@ -83,7 +83,7 @@
             >
             <div>{{item.title}}</div>
             <div>{{item.content}}</div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -109,6 +109,7 @@ import img13 from '../assets/contactUs/img13.png'
 import img14 from '../assets/contactUs/img14.png'
 import img15 from '../assets/contactUs/img15.png'
 import img16 from '../assets/contactUs/img16.png'
+import img17 from '../assets/contactUs/img17.png'
 export default {
   components: {
     Slideshow,
@@ -209,8 +210,11 @@ export default {
     }
   },
   methods: {
-    alterImg(item) {
-      item.isbol = !item.isbol
+    alterImg(item,idx) {
+      if(idx!=0){
+        item.isbol = !item.isbol
+      }
+      
     }
   }
 }
@@ -417,7 +421,7 @@ export default {
     .handshakeImg {
       width: 100%;
       height: 100%;
-      background: url('../assets/contactUs/advertising.png') no-repeat;
+      background: url('../assets/contactUs/img18.png') no-repeat;
       background-size: 100% 100%;
       padding: 42px 320px 66px 0;
       box-sizing: border-box;
@@ -486,6 +490,7 @@ export default {
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
+        background:url('../assets/contactUs/img17.png');
         .item {
           display: flex;
           flex-direction: column;

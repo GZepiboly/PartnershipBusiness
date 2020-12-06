@@ -47,6 +47,11 @@ const routes = [
     name:'联系我们',
     component: () => import('../views/contactUs.vue')
   },
+  {
+    path:'/academy',
+    name:'学院',
+    component: () => import('../views/academy.vue')
+  },
 ]
 
 const router = new VueRouter({
