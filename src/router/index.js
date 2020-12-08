@@ -52,6 +52,11 @@ const routes = [
     name:'学院',
     component: () => import('../views/academy.vue')
   },
+  {
+    path:'/case',
+    name:'经典案例',
+    component: () => import('../views/case.vue')
+  },
 ]
 
 const router = new VueRouter({
