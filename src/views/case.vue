@@ -329,6 +329,7 @@ export default {
           top: 0;
           left: 0;
           box-shadow: 0 0px 20px #c9c9c9;
+          height: 100%;
           .company-img {
             width: 100%;
             img {
